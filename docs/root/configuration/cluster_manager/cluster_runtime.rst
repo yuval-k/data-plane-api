@@ -9,18 +9,18 @@ Active health checking
 ----------------------
 
 health_check.min_interval
-  Min value for the health checking :ref:`interval <config_cluster_manager_cluster_hc_interval>`.
+  Min value for the health checking :ref:`interval <envoy_api_field_HealthCheck.interval>`.
   Default value is 0. The health checking interval will be between *min_interval* and
   *max_interval*.
 
 health_check.max_interval
-  Max value for the health checking :ref:`interval <config_cluster_manager_cluster_hc_interval>`.
+  Max value for the health checking :ref:`interval <envoy_api_field_HealthCheck.interval>`.
   Default value is MAX_INT. The health checking interval will be between *min_interval* and
   *max_interval*.
 
 health_check.verify_cluster
   What % of health check requests will be verified against the :ref:`expected upstream service
-  <config_cluster_manager_cluster_hc_service_name>` as the :ref:`health check filter
+  <envoy_api_field_HealthCheck.HttpHealthCheck.service_name>` as the :ref:`health check filter
   <arch_overview_health_checking_filter>` will write the remote service cluster into the response.
 
 .. _config_cluster_manager_cluster_runtime_outlier_detection:
@@ -29,62 +29,62 @@ Outlier detection
 -----------------
 
 See the outlier detection :ref:`architecture overview <arch_overview_outlier_detection>` for more
-information on outlier detection. The runtime parameters supported by outlier detection are the 
-same as the :ref:`static configuration parameters <config_cluster_manager_cluster_outlier_detection>`, namely:
+information on outlier detection. The runtime parameters supported by outlier detection are the
+same as the :ref:`static configuration parameters <envoy_api_msg_Cluster.OutlierDetection>`, namely:
 
 outlier_detection.consecutive_5xx
   :ref:`consecutive_5XX
-  <config_cluster_manager_cluster_outlier_detection_consecutive_5xx>`
+  <envoy_api_field_Cluster.OutlierDetection.consecutive_5xx>`
   setting in outlier detection
 
 outlier_detection.consecutive_gateway_failure
   :ref:`consecutive_gateway_failure
-  <config_cluster_manager_cluster_outlier_detection_consecutive_gateway_failure>`
+  <envoy_api_field_Cluster.OutlierDetection.consecutive_gateway_failure>`
   setting in outlier detection
 
 outlier_detection.interval_ms
   :ref:`interval_ms
-  <config_cluster_manager_cluster_outlier_detection_interval_ms>`
+  <envoy_api_field_Cluster.OutlierDetection.interval>`
   setting in outlier detection
 
 outlier_detection.base_ejection_time_ms
   :ref:`base_ejection_time_ms
-  <config_cluster_manager_cluster_outlier_detection_base_ejection_time_ms>`
+  <envoy_api_field_Cluster.OutlierDetection.base_ejection_time>`
   setting in outlier detection
 
 outlier_detection.max_ejection_percent
   :ref:`max_ejection_percent
-  <config_cluster_manager_cluster_outlier_detection_max_ejection_percent>`
+  <envoy_api_field_Cluster.OutlierDetection.max_ejection_percent>`
   setting in outlier detection
 
 outlier_detection.enforcing_consecutive_5xx
   :ref:`enforcing_consecutive_5xx
-  <config_cluster_manager_cluster_outlier_detection_enforcing_consecutive_5xx>`
+  <envoy_api_field_Cluster.OutlierDetection.enforcing_consecutive_5xx>`
   setting in outlier detection
 
 outlier_detection.enforcing_consecutive_gateway_failure
   :ref:`enforcing_consecutive_gateway_failure
-  <config_cluster_manager_cluster_outlier_detection_enforcing_consecutive_gateway_failure>`
+  <envoy_api_field_Cluster.OutlierDetection.enforcing_consecutive_gateway_failure>`
   setting in outlier detection
 
 outlier_detection.enforcing_success_rate
   :ref:`enforcing_success_rate
-  <config_cluster_manager_cluster_outlier_detection_enforcing_success_rate>`
+  <envoy_api_field_Cluster.OutlierDetection.enforcing_success_rate>`
   setting in outlier detection
 
 outlier_detection.success_rate_minimum_hosts
   :ref:`success_rate_minimum_hosts
-  <config_cluster_manager_cluster_outlier_detection_success_rate_minimum_hosts>`
+  <envoy_api_field_Cluster.OutlierDetection.success_rate_minimum_hosts>`
   setting in outlier detection
 
 outlier_detection.success_rate_request_volume
   :ref:`success_rate_request_volume
-  <config_cluster_manager_cluster_outlier_detection_success_rate_request_volume>`
+  <envoy_api_field_Cluster.OutlierDetection.success_rate_request_volume>`
   setting in outlier detection
 
 outlier_detection.success_rate_stdev_factor
   :ref:`success_rate_stdev_factor
-  <config_cluster_manager_cluster_outlier_detection_success_rate_stdev_factor>`
+  <envoy_api_field_Cluster.OutlierDetection.success_rate_stdev_factor>`
   setting in outlier detection
 
 Core
@@ -128,13 +128,13 @@ Circuit breaking
 ----------------
 
 circuit_breakers.<cluster_name>.<priority>.max_connections
-  :ref:`Max connections circuit breaker setting <config_cluster_manager_cluster_circuit_breakers_max_connections>`
+  :ref:`Max connections circuit breaker setting <envoy_api_field_CircuitBreakers.Thresholds.max_connections>`
 
 circuit_breakers.<cluster_name>.<priority>.max_pending_requests
-  :ref:`Max pending requests circuit breaker setting <config_cluster_manager_cluster_circuit_breakers_max_pending_requests>`
+  :ref:`Max pending requests circuit breaker setting <envoy_api_field_CircuitBreakers.Thresholds.max_pending_requests>`
 
 circuit_breakers.<cluster_name>.<priority>.max_requests
-  :ref:`Max requests circuit breaker setting <config_cluster_manager_cluster_circuit_breakers_max_requests>`
+  :ref:`Max requests circuit breaker setting <envoy_api_field_CircuitBreakers.Thresholds.max_requests>`
 
 circuit_breakers.<cluster_name>.<priority>.max_retries
-  :ref:`Max retries circuit breaker setting <config_cluster_manager_cluster_circuit_breakers_max_retries>`
+  :ref:`Max retries circuit breaker setting <envoy_api_field_CircuitBreakers.Thresholds.max_retries>`

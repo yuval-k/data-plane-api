@@ -18,7 +18,7 @@ fetch its own route configuration via the API.
   }
 
 cluster
-  *(required, string)* The name of an upstream :ref:`cluster <config_cluster_manager_cluster>` that
+  *(required, string)* The name of an upstream :ref:`cluster <envoy_api_msg_Cluster>` that
   hosts the route discovery service. The cluster must run a REST service that implements the
   :ref:`RDS HTTP API <config_http_conn_man_rds_api>`. NOTE: This is the *name* of a cluster defined
   in the :ref:`cluster manager <config_cluster_manager>` configuration, not the full definition of

@@ -164,7 +164,7 @@ message AggregatedConfigSource {
 }
 
 // Configuration for :ref:`listeners <config_listeners>`, :ref:`clusters
-// <config_cluster_manager_cluster>`, :ref:`routes
+// <envoy_api_msg_Cluster>`, :ref:`routes
 // <config_http_conn_man_route_table>`, :ref:`endpoints
 // <arch_overview_service_discovery>` etc. may either be sourced from the
 // filesystem or from an xDS API source. Filesystem configs are watched with
@@ -183,7 +183,7 @@ message ConfigSource {
 }
 
 // Configuration for transport socket in :ref:`listeners <config_listeners>` and
-// :ref:`clusters <config_cluster_manager_cluster>`. If the configuration is
+// :ref:`clusters <envoy_api_msg_Cluster>`. If the configuration is
 // empty, a default transport socket implementation and configuration will be
 // chosen based on the platform and existence of tls_context.
 message TransportSocket {

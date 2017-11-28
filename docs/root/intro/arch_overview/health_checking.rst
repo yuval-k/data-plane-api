@@ -3,7 +3,7 @@
 Health checking
 ===============
 
-Active health checking can be :ref:`configured <config_cluster_manager_cluster_hc>` on a per
+Active health checking can be :ref:`configured <envoy_api_field_Cluster.health_checks>` on a per
 upstream cluster basis. As described in the :ref:`service discovery
 <arch_overview_service_discovery>` section, active health checking and the SDS service discovery
 type go hand in hand. However, there are other scenarios where active health checking is desired
@@ -73,7 +73,7 @@ filter <config_http_filters_router>` will respond to the :ref:`x-envoy-immediate
 <config_http_filters_router_x-envoy-immediate-health-check-fail>` header. If this header is set by
 an upstream host, Envoy will immediately mark the host as being failed for active health check. Note
 that this only occurs if the host's cluster has active health checking :ref:`configured
-<config_cluster_manager_cluster_hc>`. The :ref:`health checking filter
+<envoy_api_field_Cluster.health_checks>`. The :ref:`health checking filter
 <config_http_filters_health_check>` will automatically set this header if Envoy has been marked as
 failed via the :ref:`/healthcheck/fail <operations_admin_interface_healthcheck_fail>` admin
 endpoint.
@@ -91,7 +91,7 @@ is having a different HTTP health checking URL for every service type. The downs
 is that overall configuration becomes more complicated as every health check URL is fully custom.
 
 The Envoy HTTP health checker supports the :ref:`service_name
-<config_cluster_manager_cluster_hc_service_name>` option. If this option is set, the health checker
+<envoy_api_field_HealthCheck.HttpHealthCheck.service_name>` option. If this option is set, the health checker
 additionally compares the value of the *x-envoy-upstream-healthchecked-cluster* response header to
 *service_name*. If the values do not match, the health check does not pass. The upstream health
 check filter appends *x-envoy-upstream-healthchecked-cluster* to the response headers. The appended

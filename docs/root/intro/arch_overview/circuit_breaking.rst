@@ -29,7 +29,7 @@ configure and code each application independently. Envoy supports various types 
   :ref:`upstream_rq_retry_overflow <config_cluster_manager_cluster_stats>` counter for the cluster
   will increment.
 
-Each circuit breaking limit is :ref:`configurable <config_cluster_manager_cluster_circuit_breakers>`
+Each circuit breaking limit is :ref:`configurable <envoy_api_msg_CircuitBreakers>`
 and tracked on a per upstream cluster and per priority basis. This allows different components of
 the distributed system to be tuned independently and have different limits.
 

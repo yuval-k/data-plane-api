@@ -48,7 +48,7 @@ Route
 -----
 
 A TCP proxy route consists of a set of optional L4 criteria and the name of a
-:ref:`cluster <config_cluster_manager_cluster>`. If a downstream connection matches
+:ref:`cluster <envoy_api_msg_Cluster>`. If a downstream connection matches
 all the specified criteria, the cluster in the route is used for the corresponding upstream
 connection. Routes are tried in the order specified until a match is found. If no match is
 found, the connection is closed. A route with no criteria is valid and always produces a match.
@@ -64,7 +64,7 @@ found, the connection is closed. A route with no criteria is valid and always pr
   }
 
 cluster
-  *(required, string)* The :ref:`cluster <config_cluster_manager_cluster>` to connect
+  *(required, string)* The :ref:`cluster <envoy_api_msg_Cluster>` to connect
   to when a the downstream network connection matches the specified criteria.
 
 destination_ip_list

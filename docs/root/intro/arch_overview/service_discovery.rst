@@ -3,7 +3,7 @@
 Service discovery
 =================
 
-When an upstream cluster is defined in the :ref:`configuration <config_cluster_manager_cluster>`,
+When an upstream cluster is defined in the :ref:`configuration <envoy_api_msg_Cluster>`,
 Envoy needs to know how to resolve the members of the cluster. This is known as *service discovery*.
 
 .. _arch_overview_service_discovery_types:
@@ -55,7 +55,7 @@ via an iptables REDIRECT rule or with Proxy Protocol.  In these cases requests r
 destination cluster are forwarded to upstream hosts as addressed by the redirection metadata,
 without any explicit host configuration or upstream host discovery.  Connections to upstream hosts
 are pooled and unused hosts are flushed out when they have been idle longer than
-:ref:`*cleanup_interval_ms* <config_cluster_manager_cluster_cleanup_interval_ms>`, which defaults to
+:ref:`*cleanup_interval_ms* <envoy_api_field_Cluster.cleanup_interval>`, which defaults to
 5000ms.  If the original destination address is is not available, no upstream connection is opened.
 Original destination service discovery must be used with the original destination :ref:`load
 balancer <arch_overview_load_balancing_types_original_destination>`.

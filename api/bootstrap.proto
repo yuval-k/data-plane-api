@@ -62,9 +62,9 @@ message Admin {
 
 message ClusterManager {
   // Name of the local cluster (i.e., the cluster that owns the Envoy running
-  // this configuration). In order to enable zone aware routing this option must
-  // be set. If local_cluster_name is defined then clusters must contain a
-  // definition of a cluster with the same name.
+  // this configuration). In order to enable :ref:`zone aware routing <arch_overview_load_balancing_zone_aware_routing>`
+  // this option must be set. If local_cluster_name is defined then the :ref:`static cluster list<envoy_api_field_Bootstrap.StaticResources.clusters>`
+  // must contain a definition of a cluster with the same name.
   string local_cluster_name = 1;
 
   // Optional global configuration for outlier detection.
@@ -121,7 +121,7 @@ message TagSpecifier {
 
   // The first capture group identifies the portion of the name to remove. The
   // second capture group (which will normally be nested inside the first)
-  // will designate the value of the tag for the statistic. If no second 
+  // will designate the value of the tag for the statistic. If no second
   // capture group is provided, the first will also be used to set the value of
   // the tag. All other capture groups will be ignored.
   //

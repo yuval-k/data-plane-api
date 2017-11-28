@@ -4,7 +4,7 @@ TLS
 ===
 
 Envoy supports both :ref:`TLS termination <config_listener_ssl_context>` in listeners as well as
-:ref:`TLS origination <config_cluster_manager_cluster_ssl>` when making connections to upstream
+:ref:`TLS origination <envoy_api_field_Cluster.tls_context>` when making connections to upstream
 clusters. Support is sufficient for Envoy to perform standard edge proxy duties for modern web
 services as well as to initiate connections with external services that have advanced TLS
 requirements (TLS1.2, SNI, etc.). Envoy supports the following TLS features:

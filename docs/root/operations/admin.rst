@@ -22,13 +22,13 @@ modify different aspects of the server.
   This is useful for debugging service discovery issues.
 
   Cluster wide information
-    - :ref:`circuit breakers<config_cluster_manager_cluster_circuit_breakers>` settings for all priority settings.
+    - :ref:`circuit breakers<envoy_api_msg_CircuitBreakers>` settings for all priority settings.
 
     - Information about :ref:`outlier detection<arch_overview_outlier_detection>` if a detector is installed. Currently
       :ref:`success rate average<arch_overview_outlier_detection_ejection_event_logging_cluster_success_rate_average>`,
       and :ref:`ejection threshold<arch_overview_outlier_detection_ejection_event_logging_cluster_success_rate_ejection_threshold>`
       are presented. Both of these values could be ``-1`` if there was not enough data to calculate them in the last
-      :ref:`interval<config_cluster_manager_cluster_outlier_detection_interval_ms>`.
+      :ref:`interval<envoy_api_field_Cluster.OutlierDetection.interval>`.
 
     - ``added_via_api`` flag -- ``false`` if the cluster was added via static configuration, ``true``
       if it was added via the :ref:`CDS<config_cluster_manager_cds>` api.
@@ -51,8 +51,8 @@ modify different aspects of the server.
       zone, String, Service zone
       canary, Boolean, Whether the host is a canary
       success_rate, Double, "Request success rate (0-100). -1 if there was not enough
-      :ref:`request volume<config_cluster_manager_cluster_outlier_detection_success_rate_request_volume>`
-      in the :ref:`interval<config_cluster_manager_cluster_outlier_detection_interval_ms>`
+      :ref:`request volume<envoy_api_field_Cluster.OutlierDetection.success_rate_request_volume>`
+      in the :ref:`interval<envoy_api_field_Cluster.OutlierDetection.interval>`
       to calculate it"
 
   Host health status
@@ -63,7 +63,7 @@ modify different aspects of the server.
     following strings:
 
     */failed_active_hc*: The host has failed an :ref:`active health check
-    <config_cluster_manager_cluster_hc>`.
+    <envoy_api_field_Cluster.health_checks>`.
 
     */failed_outlier_check*: The host has failed an outlier detection check.
 
